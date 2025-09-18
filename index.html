@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capucremoso - Cremas Naturales de Café</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav class="container">
+            <!-- Logo de la marca con ícono de taza -->
+            <div class="logo">
+                ☕ Capucremoso
+            </div>
+            
+            <!-- Botón menú hamburguesa para móvil -->
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                ☰
+            </button>
+            
+            <!-- Enlaces de navegación (desktop) -->
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+                
+                <!-- Botón del carrito con ícono usando Bootstrap Icons -->
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒 <span class="cart-count">0</span>
+                </button>
+                
+                <!-- Botón de WhatsApp -->
+                <a href="https://wa.me/573215350347?text=¡Hola!%20Me%20interesan%20sus%20cremas%20de%20café" class="whatsapp-btn" target="_blank">
+                    📱 WhatsApp
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MENÚ MÓVIL -->
+    <div class="mobile-nav-overlay" onclick="closeMobileMenu()"></div>
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <div class="logo">☕ Capucremoso</div>
+            <button class="mobile-nav-close" onclick="closeMobileMenu()">✕</button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="#inicio" onclick="closeMobileMenu()">🏠 Inicio</a>
+            <a href="#productos" onclick="closeMobileMenu()">📦 Productos</a>
+            <a href="#nosotros" onclick="closeMobileMenu()">ℹ️ Nosotros</a>
+            <a href="#contacto" onclick="closeMobileMenu()">📞 Contacto</a>
+            <button class="mobile-cart-btn" onclick="toggleCart(); closeMobileMenu();">
+                <span>🛒 Carrito</span>
+                <span class="cart-count" style="background: #E85D75; color: white; border-radius: 50%; padding: 0.2rem 0.5rem; font-size: 0.75rem; min-width: 22px; text-align: center;">0</span>
+            </button>
+            <a href="https://wa.me/573215350347?text=¡Hola!%20Me%20interesan%20sus%20cremas%20de%20café" class="mobile-whatsapp-btn" target="_blank">
+                📱 WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- SECCIÓN HERO PRINCIPAL -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Etiqueta superior -->
+                <div class="hero-tag">
+                    🌿 COSMÉTICA NATURAL
+                </div>
+                
+                <!-- Título principal -->
+                <h1>Despierta tu<br>belleza natural</h1>
+                
+                <!-- Subtítulo descriptivo -->
+                <p>Descubre el poder del café en tu rutina de belleza. Productos artesanales que nutren, revitalizan y despiertan la luminosidad natural de tu piel.</p>
+                
+                <!-- Botón principal de acción -->
+                <a href="#productos" class="cta-btn bounce">
+                    Explorar Productos ⬇️
+                </a>
+                
+                <!-- Indicadores de confianza -->
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        ❤️ 100% Natural
+                    </div>
+                    <div class="trust-item">
+                        🛡️ Cruelty Free
+                    </div>
+                    <div class="trust-item">
+                        ⭐ 5★ Calificación
+                    </div>
+                    <div class="trust-item">
+                        👥 1000+ Clientes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PRODUCTOS -->
+    <section class="products" id="productos">
+        <div class="container">
+            <!-- Título y descripción de la sección -->
+            <h2 class="section-title">Nuestros Productos</h2>
+            <p class="section-subtitle">Descubre nuestra colección de productos naturales elaborados con los mejores granos de café para cuidar y nutrir tu piel.</p>
+            
+            <!-- Grid de productos - 6 productos como solicitaste -->
+            <div class="products-grid">
+                <!-- Producto 1: Crema Facial Energizante -->
+                <div class="product-card">
+                    <div class="product-image">⚡</div>
+                    <div class="product-name">Crema Facial Energizante</div>
+                    <div class="product-description">Crema facial con extracto de café arábica que revitaliza y energiza tu piel, proporcionando luminosidad natural.</div>
+                    <div class="product-price">$ 89.000</div>
+                    <button class="add-to-cart" onclick="addToCart('Crema Facial Energizante', 89000)">
+                        🛒 Agregar al Carrito
+                    </button>
+                </div>
+
+                <!-- Producto 2: Exfoliante Corporal -->
+                <div class="product-card">
+                    <div class="product-image">🥥</div>
+                    <div class="product-name">Exfoliante Corporal Café & Coco</div>
+                    <div class="product-description">Exfoliante natural que combina granos de café molido con aceite de coco para eliminar células muertas y suavizar la piel.</div>
+                    <div class="product-price">$ 65.000</div>
+                    <button class="add-to-cart" onclick="addToCart('Exfoliante Corporal Café & Coco', 65000)">
+                        🛒 Agregar al Carrito
+                    </button>
+                </div>
+
+                <!-- Producto 3: Mascarilla Detox -->
+                <div class="product-card">
+                    <div class="product-image">🌱</div>
+                    <div class="product-name">Mascarilla Detox Café Verde</div>
+                    <div class="product-description">Mascarilla purificante con café verde y arcilla bentonita que limpia profundamente los poros y revitaliza la piel.</div>
+                    <div class="product-price">$ 72.000</div>
+                    <button class="add-to-cart" onclick="addToCart('Mascarilla Detox Café Verde', 72000)">
+                        🛒 Agregar al Carrito
+                    </button>
+                </div>
+
+                <!-- Producto 4: Crema Corporal -->
+                <div class="product-card">
+                    <div class="product-image">🍯</div>
+                    <div class="product-name">Crema Corporal Hidratante Café & Vainilla</div>
+                    <div class="product-description">Crema hidratante de textura suave que combina café, vainilla y manteca de karité para una piel sedosa y aromática.</div>
+                    <div class="product-price">$ 78.000</div>
+                    <button class="add-to-cart" onclick="addToCart('Crema Corporal Hidratante Café & Vainilla', 78000)">
+                        🛒 Agregar al Carrito
+                    </button>
+                </div>
+
+                <!-- Producto 5: Serum Contorno de Ojos -->
+                <div class="product-card">
+                    <div class="product-image">👁️</div>
+                    <div class="product-name">Serum Contorno de Ojos Cafeína</div>
+                    <div class="product-description">Serum especializado para el contorno de ojos con cafeína pura que reduce ojeras, bolsas y signos de fatiga.</div>
+                    <div class="product-price">$ 95.000</div>
+                    <button class="add-to-cart" onclick="addToCart('Serum Contorno de Ojos Cafeína', 95000)">
+                        🛒 Agregar al Carrito
+                    </button>
+                </div>
+
+                <!-- Producto 6: Bálsamo Labial -->
+                <div class="product-card">
+                    <div class="product-image">💋</div>
+                    <div class="product-name">Bálsamo Labial Café & Miel</div>
+                    <div class="product-description">Bálsamo labial nutritivo con extracto de café y miel que hidrata, protege y aporta un suave aroma a café.</div>
+                    <div class="product-price">$ 35.000</div>
+                    <button class="add-to-cart" onclick="addToCart('Bálsamo Labial Café & Miel', 35000)">
+                        🛒 Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE NOSOTROS -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <h2 class="section-title">Sobre Capucremoso</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p><strong>Nacimos del amor por el café y la pasión por el cuidado natural de la piel.</strong> Desde 2019, hemos estado creando productos únicos que combinan la riqueza del café colombiano con ingredientes naturales excepcionales.</p>
+                    
+                    <p>Todo comenzó en una pequeña finca cafetera en las montañas de Colombia, donde descubrimos las increíbles propiedades del café para el cuidado de la piel. Las mujeres de la región habían usado durante generaciones los granos de café como exfoliante natural y antioxidante.</p>
+                    
+                    <p>Inspirados por esta sabiduría ancestral, decidimos crear Capucremoso: una línea de productos que honra la tradición cafetera colombiana mientras incorpora técnicas modernas de cosmética natural.</p>
+                    
+                    <p><strong>Cada producto es elaborado artesanalmente con ingredientes cuidadosamente seleccionados, garantizando que tu piel reciba solo lo mejor de la naturaleza.</strong></p>
+                </div>
+                <div class="about-image">
+                    ☕
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <!-- Título principal -->
+            <h2 class="section-title">Contáctanos</h2>
+            <p class="section-subtitle">Estamos aquí para ayudarte. Contáctanos por tu medio preferido y te responderemos lo más pronto posible.</p>
+            
+            <!-- Grid principal de contacto -->
+            <div class="contact-grid">
+                <!-- Canales de Contacto -->
+                <div class="contact-channels">
+                    <h3 style="color: #8B6F47; font-weight: 600; margin-bottom: 1.5rem;">Canales de Contacto</h3>
+                    
+                    <!-- WhatsApp -->
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-info">
+                            <h4>WhatsApp</h4>
+                            <p>Respuesta inmediata</p>
+                        </div>
+                        <a href="https://wa.me/573215350347?text=¡Hola!%20Me%20interesan%20sus%20cremas%20de%20café" class="contact-action" target="_blank">Chatear ahora</a>
+                    </div>
+                    
+                    <!-- Teléfono -->
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-info">
+                            <h4>Teléfono</h4>
+                            <p>+57 321 535 0347</p>
+                        </div>
+                        <a href="tel:+573215350347" class="contact-action">Llamar</a>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-info">
+                            <h4>Email</h4>
+                            <p>info@capucremoso.com</p>
+                        </div>
+                        <a href="mailto:info@capucremoso.com" class="contact-action">Escribir</a>
+                    </div>
+                </div>
+                
+                <!-- Mensajes Rápidos -->
+                <div class="quick-messages">
+                    <h3>Mensajes Rápidos</h3>
+                    <p>Haz clic en cualquiera de estas opciones para enviar un mensaje predefinido por WhatsApp:</p>
+                    
+                    <!-- Consulta de Productos -->
+                    <div class="message-item" onclick="sendQuickMessage('productos')">
+                        <h4>📋 Consulta de Productos</h4>
+                        <p>¡Hola! Me gustaría conocer más detalles sobre sus productos de café para la piel 😊</p>
+                    </div>
+                    
+                    <!-- Asesoría Personalizada -->
+                    <div class="message-item" onclick="sendQuickMessage('asesoria')">
+                        <h4>💁‍♀️ Asesoría Personalizada</h4>
+                        <p>¡Hola! Necesito ayuda para elegir los productos ideales para mi tipo de piel 🌟</p>
+                    </div>
+                    
+                    <!-- Información de Envíos -->
+                    <div class="message-item" onclick="sendQuickMessage('envios')">
+                        <h4>🚚 Información de Envíos</h4>
+                        <p>¡Hola! Me gustaría conocer información sobre envíos y tiempos de entrega 📦</p>
+                    </div>
+                    
+                    <!-- Distribución -->
+                    <div class="message-item" onclick="sendQuickMessage('distribucion')">
+                        <h4>🏢 Distribución</h4>
+                        <p>¡Hola! Estoy interesado/a en ser distribuidor de productos Capucremoso 🤝</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Información Adicional -->
+            <div class="additional-info">
+                <!-- Horarios de Atención -->
+                <div class="info-card">
+                    <h3>🕒 Horarios de Atención</h3>
+                    <div class="schedule-item">
+                        <span class="schedule-day">Lunes - Viernes:</span>
+                        <span class="schedule-time">8:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-day">Sábados:</span>
+                        <span class="schedule-time">9:00 AM - 4:00 PM</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-day">Domingos:</span>
+                        <span class="schedule-time">Cerrado</span>
+                    </div>
+                </div>
+                
+                <!-- Ubicación -->
+                <div class="info-card">
+                    <h3>📍 Ubicación</h3>
+                    <p style="color: #8B6F47; margin-bottom: 0.5rem;"><strong>Medellín, Antioquia</strong></p>
+                    <p style="color: #A0845C;">Colombia</p>
+                    <div style="margin-top: 1rem;">
+                        <p style="color: #8B6F47; font-weight: 500; margin-bottom: 0.5rem;">Síguenos</p>
+                        <div class="social-links" style="justify-content: flex-start; margin-top: 0.5rem;">
+                            <a href="#" style="color: #C49B61;">📷</a>
+                            <a href="#" style="color: #C49B61;">📘</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pregunta Específica -->
+            <div style="background: rgba(37, 211, 102, 0.1); padding: 2rem; border-radius: 20px; text-align: center; margin-top: 3rem; border: 1px solid rgba(37, 211, 102, 0.2);">
+                <h3 style="color: #8B6F47; margin-bottom: 1rem;">¿Tienes una pregunta específica?</h3>
+                <p style="color: #A0845C; margin-bottom: 1.5rem;">Escríbenos directamente y te responderemos personalmente</p>
+                <a href="https://wa.me/573215350347?text=¡Hola!%20Tengo%20una%20pregunta%20específica%20sobre%20sus%20productos" 
+                   class="checkout-btn" 
+                   target="_blank" 
+                   style="width: auto; display: inline-flex;">
+                    📱 Escribir por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Información de la empresa -->
+                <div class="footer-section">
+                    <div class="logo" style="color: white; margin-bottom: 1rem;">☕ Capucremoso</div>
+                    <p>Productos naturales de belleza elaborados con café colombiano premium. Despierta la belleza natural de tu piel.</p>
+                    <div class="social-links">
+                        <a href="#">📷</a>
+                        <a href="#">📘</a>
+                        <a href="#">📱</a>
+                    </div>
+                </div>
+                
+                <!-- Navegación -->
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#productos">Productos</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                
+                <!-- Productos -->
+                <div class="footer-section">
+                    <h3>Productos</h3>
+                    <a href="#">Cremas Faciales</a>
+                    <a href="#">Productos Corporales</a>
+                    <a href="#">Exfoliantes</a>
+                    <a href="#">Mascarillas</a>
+                    <a href="#">Serums</a>
+                    <a href="#">Bálsamos</a>
+                </div>
+                
+                <!-- Contacto -->
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>📞 +57 321 535 0347</p>
+                    <p>📧 info@capucremoso.com</p>
+                    <p>📍 Medellín, Colombia</p>
+                    <a href="https://wa.me/573215350347?text=¡Hola!%20Me%20interesan%20sus%20productos" 
+                       class="whatsapp-btn" 
+                       target="_blank" 
+                       style="margin-top: 1rem; display: inline-flex;">
+                        📱 Contáctanos
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Capucremoso. Todos los derechos reservados. | Hecho con ❤️ en Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CARRITO LATERAL -->
+    <div class="cart-overlay" onclick="closeCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Carrito de Compras</h3>
+            <button class="close-cart" onclick="closeCart()">✕</button>
+        </div>
+        <div id="cartItems">
+            <p style="text-align: center; color: #A0845C; margin-top: 2rem;">Tu carrito está vacío</p>
+        </div>
+        <div class="cart-total" id="cartTotal">
+            Total: $0
+        </div>
+        <button class="checkout-btn" onclick="checkout()">
+            📱 Finalizar Compra por WhatsApp
+        </button>
+        
+    </div>
+    <script src="js/js.js"></script>
+</body>
+</html>
